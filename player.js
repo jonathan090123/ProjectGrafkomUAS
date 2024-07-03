@@ -127,7 +127,7 @@ export class Player {
         if (!this.mesh) return;
 
         var direction = new THREE.Vector3(0, 0, 0);
-        var moveSpeed = 10;
+        var moveSpeed = 4;
 
         if (this.controller.key['forward']) {
             direction.x += 1;

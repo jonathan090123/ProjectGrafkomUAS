@@ -106,7 +106,7 @@ export class Main {
     this.moveRight = false;
     this.tiltRight = false;
     this.tiltLeft = false;
-    this.moveSpeed = 0.05;
+    this.moveSpeed = 0.01;
     this.rollSpeed = 0.01;
 
     // Key event listeners
