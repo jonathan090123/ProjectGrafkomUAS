@@ -62,24 +62,23 @@ export class Main {
     directionalLight.shadow.mapSize.width = 2048;
     directionalLight.shadow.mapSize.height = 2048;
     directionalLight.shadow.camera.near = 0.5;
-    directionalLight.shadow.camera.far = 50;
-    directionalLight.shadow.camera.left = -30;
-    directionalLight.shadow.camera.right = 30;
-    directionalLight.shadow.camera.top = 30;
-    directionalLight.shadow.camera.bottom = -30;
-    directionalLight.shadow.bias = -0.01;
+    directionalLight.shadow.camera.far = 100;
+    directionalLight.shadow.camera.left = -100;
+    directionalLight.shadow.camera.right = 100;
+    directionalLight.shadow.camera.top = 100;
+    directionalLight.shadow.camera.bottom = -100;
+    directionalLight.shadow.bias = -0.005;
 
 
     // ambient light
     var ambient = new THREE.AmbientLight(0xffffff, 0.1);
     this.scene.add(ambient);
 
+     // Load sky texture Fog
+      this.scene.fog = new THREE.Fog(0xADD8E6, 0, 35);
+
     this.scene.add(directionalLight);
     // this.scene.add(new THREE.DirectionalLightHelper(directionalLight));
-
-    const pointLight = new THREE.PointLight(0xffffff);
-    pointLight.position.set(3, 20, 19);
-    this.scene.add(pointLight);
 
     // Set up third-person camera
     const thirdPersonCamera = new ThirdPersonCamera(this.camera, new THREE.Vector3(-5, 5, 0), new THREE.Vector3(0, 0, 0));
@@ -106,7 +105,7 @@ export class Main {
     this.moveRight = false;
     this.tiltRight = false;
     this.tiltLeft = false;
-    this.moveSpeed = 0.01;
+    this.moveSpeed = 0.1;
     this.rollSpeed = 0.01;
 
     // Key event listeners
